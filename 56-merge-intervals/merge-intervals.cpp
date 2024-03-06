@@ -18,6 +18,7 @@ public:
         return false;
     }
     vector<vector<int>> merge(vector<vector<int>>& v) {
+        ios_base::sync_with_stdio(0);
         sort(v.begin(),v.end());
         int n = v.size();
         if (n==1) return v;
@@ -29,14 +30,12 @@ public:
             while (j<n){
                 if (v[j][0] <= v[i][1]){
                     val = max(v[j][1] , val);
-                    //cout << val << endl;
                     j++;
                 }
                 else{
                     break;
                 }
             }
-            //if (i+1 == j and )
             res.push_back({v[i][0],val});
             i = j;
             j = i+1;
