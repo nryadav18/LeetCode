@@ -1,20 +1,29 @@
 class Solution {
 public:
     int getCommon(vector<int>& nums1, vector<int>& nums2) {
-        map<int,int>mp;
-        for (auto it : nums1){
-            if (mp[it] == 0){
-                mp[it]++;
+        int i=0;
+        int j=0;
+        int m = nums1.size();
+        int n = nums2.size();
+        while (i<m and j<n){
+            if (nums1[i] == nums2[j]){
+                return nums1[i];
             }
-        }
-        for (auto it : nums2){
-            if (mp[it] == 1){
-                mp[it]++;
+            else if (nums1[i] < nums2[j]){
+                while (nums1[i] < nums2[j]){
+                    i++;
+                    if (i>=m){
+                        return -1;
+                    }
+                }
             }
-        }
-        for (auto it : mp){
-            if (it.second >= 2){
-                return it.first;
+            else{
+                while (nums1[i] > nums2[j]){
+                    j++;
+                    if (j>=n){
+                        return -1;
+                    }
+                }
             }
         }
         return -1;
