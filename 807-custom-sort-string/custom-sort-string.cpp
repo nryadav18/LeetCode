@@ -14,7 +14,6 @@ public:
                 while (v2[it - 'a']--){
                     jyo += it;
                 }
-                v2[it - 'a'] = 0;
             }
         }
         for (auto it : s){
