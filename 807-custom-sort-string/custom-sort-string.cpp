@@ -10,7 +10,7 @@ public:
         }
         string jyo;
         for (auto it : order){
-            if (v1[it - 'a'] == 1 and v2[it - 'a'] >= 1){
+            if (v2[it - 'a'] >= 1){
                 while (v2[it - 'a']--){
                     jyo += it;
                 }
