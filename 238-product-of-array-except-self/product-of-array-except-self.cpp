@@ -1,23 +1,23 @@
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
-        int pre = 1;
-        int suf = 1;
+        vector<int>prefix(1e5+1,1);//10^5+2
+        vector<int>suffix(1e5+1,1);
         int n = nums.size();
-        vector<int>pref(n+2,1) , suff(n+2,1);
-        for (int i=0;i<n;i++){
-            pre = pre * nums[i];
-            pref[i+1] = pre;
+        int preProd = 1;
+        int sufProd = 1;
+        for (int i = 0 ; i < n ; i++){
+            preProd *= nums[i];
+            prefix[i+1] = preProd;
         }
-        for (int i=n-1;i>=0;i--){
-            suf = suf * nums[i];
-            suff[i] = suf;
+        for (int i = n-1 ; i >= 0 ; i--){
+            sufProd *= nums[i];
+            suffix[i+1] = sufProd;
         }
-        // for (auto it : pref) cout << it << " ";
-        // cout << endl;
-        // for (auto it : suff) cout << it << " ";
-        for (int i=1;i<=n;i++){
-            nums[i-1] = pref[i-1]*suff[i];
+        for (int i = 1 ; i <= n ; i++){
+            int val = prefix[i-1]*suffix[i+1];
+            //cout << val << " ";
+            nums[i-1] = val;
         }
         return nums;
     }
