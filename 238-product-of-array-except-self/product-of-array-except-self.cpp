@@ -1,7 +1,8 @@
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
-        vector<int>prefix(1e5+1,1);//10^5+2
+        ios_base::sync_with_stdio(0);
+        vector<int>prefix(1e5+1,1);
         vector<int>suffix(1e5+1,1);
         int n = nums.size();
         int preProd = 1;
