@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> check(vector<vector<int>>&vec,int n){
+        ios_base::sync_with_stdio(0);
         vector<vector<int>>v;
         int i = 0;
         int mergeCount = 0;
@@ -27,6 +28,7 @@ public:
         return v;
     }
     vector<vector<int>> insert(vector<vector<int>>& vec, vector<int>& single) {
+        ios_base::sync_with_stdio(0);
         vector<vector<int>>v;
         int i = 0;
         int mergeCount = 0;
