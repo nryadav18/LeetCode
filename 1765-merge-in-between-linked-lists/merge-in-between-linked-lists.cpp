@@ -26,12 +26,10 @@ public:
             cnt++;
             temp1 = temp1->next;
         }
+        raj->next = list2;
         while (temp2->next!=NULL){
             temp2 = temp2->next;
         }
-        // cout << raj->val << endl;
-        // cout << jyo->val << endl;
-        raj->next = list2;
         temp2->next = jyo;
         return list1;
     }
