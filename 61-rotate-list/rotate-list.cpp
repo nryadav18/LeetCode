@@ -12,6 +12,8 @@ class Solution {
 public:
     typedef ListNode Node;
     ListNode* rotateRight(ListNode* head, int k) {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
         if (head == NULL or head->next == NULL or k==0) return head;
         int size = 0;
         Node* temp = head;
