@@ -1,6 +1,7 @@
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
+        ios_base::sync_with_stdio(0);
         vector<int>v(1e5+2);
         int n = nums.size();
         for (auto it : nums) v[it]++;
