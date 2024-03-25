@@ -11,7 +11,8 @@
 class Solution {
 public:
     ListNode* sortList(ListNode* head) {
-        ios_base::sync_with_stdio(0);
+        ios_base::sync_with_stdio(false);
+        cin.tie(nullptr);
         if (head == NULL or head->next == NULL){
             return head;
         }
