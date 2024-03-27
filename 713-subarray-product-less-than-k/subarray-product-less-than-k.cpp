@@ -1,6 +1,8 @@
 class Solution {
 public:
     int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+        ios_base::sync_with_stdio(0);
+        cin.tie(nullptr);
         int n = nums.size();
         long long int val = 1;
         int mod = 1e9+7;
