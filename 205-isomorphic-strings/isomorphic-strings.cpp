@@ -3,25 +3,22 @@ public:
     bool isIsomorphic(string s, string t) {
         ios_base::sync_with_stdio(0);
         cin.tie(nullptr);
-        vector<char>v1(256,' ');
-        vector<char>v2(256,' ');
+        unordered_map<char,char>up1,up2;
         int n = s.length();
         for (int i=0;i<n;i++){
-            int ind1 = s[i];
-            if (v1[ind1] == ' '){
-                v1[ind1] = t[i];
+            if (up1.find(s[i]) == up1.end()){
+                up1[s[i]] = t[i];
             }
             else{
-                if (v1[ind1] != t[i]){
+                if (up1[s[i]] != t[i]){
                     return false;
                 }
             }
-            int ind2 = t[i];
-            if (v2[ind2] == ' '){
-                v2[ind2] = s[i];
+            if (up2.find(t[i]) == up2.end()){
+                up2[t[i]] = s[i];
             }
             else{
-                if (v2[ind2] != s[i]){
+                if (up2[t[i]] != s[i]){
                     return false;
                 }
             }
