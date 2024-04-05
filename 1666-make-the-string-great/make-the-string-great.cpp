@@ -16,22 +16,25 @@ public:
         if (n == 0 or n == 1) return s;
         int cnt = 0;
         int i = 0;
-        string str;
+        stack<char>st;
         while ( i < n ){
-            if (s[i] >= 'a' and s[i] <= 'z' and s[i+1] >= 'A' and s[i+1] <= 'Z' and check(s[i],s[i+1])){
-                i += 2;
-                cnt++;
+            if (st.empty()){
+                st.push(s[i]);
             }
-            else if (s[i] >= 'A' and s[i] <= 'Z' and s[i+1] >= 'a' and s[i+1] <= 'z' and check(s[i],s[i+1])){
-                i += 2;
-                cnt++;
+            else if (check(st.top(),s[i])){
+                st.pop();
             }
             else{
-                str += s[i];
-                i++;
+                st.push(s[i]);
             }
+            i++;
         }
-        if (cnt != 0) return makeGood(str);
+        string str;
+        while (!st.empty()){
+            str += st.top();
+            st.pop();
+        }
+        reverse(str.begin(),str.end());
         return str;
     }
 };
