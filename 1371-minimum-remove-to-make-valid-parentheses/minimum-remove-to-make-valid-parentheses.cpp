@@ -1,6 +1,8 @@
 class Solution {
 public:
     string minRemoveToMakeValid(string s) {
+        ios_base::sync_with_stdio(0);
+        cin.tie(nullptr);
         int n = s.length();
         int i = 0;
         int openCount = 0 , closeCount = 0;
