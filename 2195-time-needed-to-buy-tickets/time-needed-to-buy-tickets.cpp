@@ -6,17 +6,24 @@ public:
         int n = tickets.size();
         if (n == 1) return tickets[0];
         int time = 0;
-        while (1){
-            for (int i = 0 ; i < n ; i++){
-                tickets[i]--;
-                if (tickets[i] >= 0){
-                    time++;
+        for (int i = 0 ; i < n ; i++){
+            if (i <= k){
+                if (tickets[i] < tickets[k]){
+                    time += tickets[i];
                 }
-                if (i == k and tickets[i] == 0){
-                    return time;
+                else{
+                    time += tickets[k];
+                }
+            }
+            else{
+                if (tickets[i] < tickets[k]){
+                    time += tickets[i];
+                }
+                else{
+                    time += tickets[k] - 1;
                 }
             }
         }
-        return 0;
+        return time;
     }
 };
