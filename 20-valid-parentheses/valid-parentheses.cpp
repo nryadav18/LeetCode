@@ -1,8 +1,6 @@
 class Solution {
 public:
     bool isValid(string s) {
-        ios_base::sync_with_stdio(0);
-        cin.tie(nullptr);
         stack<char>st;
         int n = s.length();
         for (int i=0;i<n;i++){
