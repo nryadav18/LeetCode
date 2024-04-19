@@ -1,7 +1,9 @@
 class Solution {
-set<vector<int>>sov;
-private:
+    set<vector<int>>sov; 
+    private:
     void recFun(vector<int>v,int i,int j){
+        ios_base::sync_with_stdio(0);
+        cin.tie(nullptr);
         if (i >= j){
             sov.insert(v);
             return;
@@ -12,8 +14,10 @@ private:
             swap(v[i],v[k]);
         }
     }
-public:
+    public:
     vector<vector<int>> permuteUnique(vector<int>& nums) {
+        ios_base::sync_with_stdio(0);
+        cin.tie(nullptr);
         int n = nums.size();
         recFun(nums,0,n-1);
         vector<vector<int>>mat;
