@@ -14,6 +14,8 @@ public:
     unordered_map<int,int>up;
     int maxFreq = 0;
     void inOrder(TreeNode* root){
+        ios_base::sync_with_stdio(0);
+        cin.tie(nullptr);
         if (root == NULL) return;
         up[root->val]++;
         if (maxFreq < up[root->val]){
@@ -23,6 +25,8 @@ public:
         inOrder(root->right);
     }
     vector<int> findMode(TreeNode* root) {
+        ios_base::sync_with_stdio(0);
+        cin.tie(nullptr);
         if (root->left == NULL and root->right == NULL) return {root->val};
         inOrder(root);
         vector<int>v;
