@@ -1,6 +1,8 @@
 class Solution {
 public:
     int funCall(int n,vector<int>&v){
+        ios_base::sync_with_stdio(0);
+        cin.tie(nullptr);
         if (n == 0) return 0;
         if (n == 1 or n == 2) return 1;
         if (v[n-1] == -1) v[n-1] = funCall(n-1,v);
