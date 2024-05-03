@@ -25,9 +25,7 @@ public:
                 q.pop();
                 if (node->left) q.push(node->left);
                 if (node->right) q.push(node->right);
-                if (maxi < node->val){
-                    maxi = node->val;
-                }
+                if (maxi < node->val) maxi = node->val;
             }
             v.push_back(maxi);
         }
