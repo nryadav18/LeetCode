@@ -13,6 +13,8 @@ class Solution {
 /* private : N R YADAV CODE begin here..! */
 public:
     void levelOrderTraversal(TreeNode* root){ // Level Order Traversal Function;
+        ios_base::sync_with_stdio(0);
+        cin.tie(nullptr);
         queue<TreeNode*>q;
         q.push(root);
         int level = 0; //Variable to maintain Tree Level from Root;
