@@ -11,8 +11,10 @@
  */
 class Solution {
 public:
-    int levelOrder(TreeNode* root){
-        queue<TreeNode*>q;
+    int levelOrder(TreeNode* root){ //Level Order Traversal Function.
+        ios_base::sync_with_stdio(0);
+        cin.tie(nullptr);
+        queue<TreeNode*>q; //Queue which contains TreeNode Addresses.
         q.push(root);
         while(!q.empty()){
             int sum = 0;
@@ -24,14 +26,15 @@ public:
                 if (nn->right) q.push(nn->right);
                 sum += nn->val;
             }
-            if (q.empty()) return sum;
+            if (q.empty()) return sum; 
+            //Returning Sum, whenever the Queue is Empty for Next Iteration.
         }
-        return 0;
+        return 0; //Atlast Returning Value of this Function.
     }
     int deepestLeavesSum(TreeNode* root) {
         ios_base::sync_with_stdio(0);
         cin.tie(nullptr);
-        if (!root->left and !root->right) return root->val; //Base Case
-        return levelOrder(root); //Level Order Function Call
+        if (!root->left and !root->right) return root->val; //Base Case.
+        return levelOrder(root); //Level Order Function Call.
     }
 };
