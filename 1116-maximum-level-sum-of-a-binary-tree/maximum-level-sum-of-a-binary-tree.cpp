@@ -16,7 +16,7 @@ public:
         cin.tie(nullptr);
         queue<TreeNode*>q; //A Queue to Store Each Node Address at Each Level
         q.push(root); //Intially add Root Node to continue further
-        int maxLevel = INT_MIN, maxLevelSum = INT_MIN, curLevel = 1; //Set Intial Values
+        int maxLevel = 0, maxLevelSum = INT_MIN, curLevel = 1; //Set the Intial Values
         while (!q.empty()){ //Until the Queue gets Empty
             int n = q.size() , curLevelSum = 0; //Keep a Track of Each Level Sum
             for (int i=0;i<n;i++){ //Travase in each level using the declared Queue
