@@ -12,10 +12,7 @@ public:
         int cnt = 0;
         bool isOneFound = false;
         for (auto it : up){
-            if (it.second == 1){
-                isOneFound = true;
-            }
-            else if (it.second % 2 == 0){
+            if (it.second % 2 == 0){
                 cnt += it.second;
             }
             else{
