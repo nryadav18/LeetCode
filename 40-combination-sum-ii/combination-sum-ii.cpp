@@ -2,14 +2,11 @@ class Solution {
 public:
     set<vector<int>>sov;
     void recFunCall(vector<int>nums,int i,vector<int>v,int n,int t,int sum){
-        if (i >= n and sum != t){
+        if ((i >= n and sum != t) or sum > t){
             return ;
         }
         else if (sum == t){
             sov.insert(v);
-            return;
-        }
-        else if (sum > t){
             return;
         }
         v.push_back(nums[i]);
