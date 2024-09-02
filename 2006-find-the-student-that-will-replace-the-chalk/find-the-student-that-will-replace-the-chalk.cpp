@@ -6,9 +6,7 @@ public:
         for (int i=0;i<chalk.size();i++){
             sum = (sum+chalk[i]);
         }
-        while (k >= sum){
-            k -= sum;
-        }
+        k %= sum;
         cout << k << endl;
         if (k == 0) return 0;
         for (int i=0;i<chalk.size();i++){
