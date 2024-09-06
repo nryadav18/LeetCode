@@ -11,6 +11,8 @@
 class Solution {
 public:
     ListNode* modifiedList(vector<int>& nums, ListNode* head) {
+        ios_base::sync_with_stdio(0);
+        cin.tie(nullptr);
         unordered_map<int,int>up;
         for (auto it : nums){
             up[it]++;
