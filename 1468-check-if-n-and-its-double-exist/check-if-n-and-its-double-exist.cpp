@@ -6,15 +6,11 @@ public:
         map<int,int>mp;
         for (auto it : arr) mp[it]++;
         for (auto it : arr){
-            if (it == 0 or it == 1){
-                if (mp[it] >= 2){
-                    return true;
+            if (mp[it*2] >= 1){
+                if ((it == 0 or it == 1) and mp[it] == 1){
+                    continue;
                 }
-            }
-            else{
-                if (mp[it*2] >= 1){
-                    return true;
-                }
+                return true;
             }
         }
         return false;
