@@ -9,6 +9,8 @@ public:
         performDFS(nums,i+1,n,result,store);
     }
     int subsetXORSum(vector<int>& nums) {
+        ios_base::sync_with_stdio(0);
+        cin.tie(nullptr);
         vector<vector<int>>result;
         vector<int>store;
         performDFS(nums,0,nums.size(),result,store);
