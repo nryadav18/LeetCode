@@ -16,10 +16,10 @@ public:
         sum += root->val;
         cout << "a" << "  " << sum << endl;
         store.push_back(root->val);
+        performDFS(root->left,target,result,sum,store);
         if (sum == target and !root->left and !root->right){
             result.push_back(store);
         }
-        performDFS(root->left,target,result,sum,store);
         cout << "b" << " " << sum << endl;
         performDFS(root->right,target,result,sum,store);
         store.pop_back();
