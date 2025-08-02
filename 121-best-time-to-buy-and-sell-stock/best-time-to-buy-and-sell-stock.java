@@ -3,8 +3,8 @@ class Solution {
         int size = prices.length, minValue = prices[0], maxPrice = 0;
         for (int eachNum : prices){
             int profit = eachNum - minValue;
-            if (profit > maxPrice) maxPrice = profit;
-            if (minValue > eachNum) minValue = eachNum;
+            maxPrice = Math.max(profit,maxPrice);
+            minValue = Math.min(minValue,eachNum);
         }
         return maxPrice;
     }
